@@ -1,0 +1,29 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Retrovisor"
+    },
+    {
+      "id": 2,
+      "nome": "Calota"
+    }
+  ],
+  "cliente": [
+    {
+      "username": "vineefreitas",
+      "senha": "123456",
+      "id": 1
+    },
+    {
+      "username": "karinekalinca",
+      "senha": "123456",
+      "id": 2
+    }
+  ],
+  "categorias": [
+    {
+        "descricao": "basico"
+    }
+  ]
+}
