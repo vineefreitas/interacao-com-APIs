@@ -7,6 +7,11 @@
     {
       "id": 2,
       "nome": "Calota"
+    },
+    {
+      "id": 3,
+      "nome": "Volante",
+      "tipo": "Controle"
     }
   ],
   "cliente": [
@@ -23,7 +28,7 @@
   ],
   "categorias": [
     {
-        "descricao": "basico"
+      "descricao": "basico"
     }
   ]
 }
