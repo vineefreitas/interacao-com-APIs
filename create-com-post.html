@@ -9,20 +9,59 @@
     <h1>Create com Post</h1>
     <a href="./index.html"> ↖ Home</a>
 
-    <button type="button" id="carregar">Carregar Produtos</button>
-
-    <form action="" method="get">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome"name="nome">
-        <button type="submit">Enviar</button>
+    <form action="" method="post">
+        <div class="controle-form">
+            <label for="idProduto">ID do produto</label>
+            <input type="number" id="idProduto" name="idProduto" min="1" disabled>
+        </div>
+        <div class="controle-form">
+            <label for="nomeProduto">Nome:</label>
+            <input type="text" id="nomeProduto" name="nomeProduto">
+        </div>
+        <div class="controle-form">
+            <label for="tipoProduto">Tipo de produto:</label>
+            <select name="" id="tipoProduto">
+                <option value="Carroceria">Carroceria</option>
+                <option value="Controle">Controle</option>
+                <option value="Opcional">Opcional</option>
+            </select>
+        </div>
     </form>
+
+        <button type="button" id="cadastrar">Cadastrar</button>
 
     <div id="produtos">
         <h2>Produtos</h2>
     </div>
 
     <script>
-        document.querySelector('#carregar').addEventListener('click', () => {
+        buscarProdutos();
+
+        document.querySelector('#cadastrar').addEventListener('click', () => {
+
+            const dadosProduto = {
+                "id": null,
+                "nome": document.querySelector('#nomeProduto').value,
+                "tipo": document.querySelector('#tipoProduto').value
+            }
+
+            fetch('http://[::1]:3000/produtos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dadosProduto)
+            }).then(resposta => {
+                if (resposta.ok) {
+                    alert('Produto Cadastrado!');
+                    buscarProdutos();
+                } else {
+                    alert('Erro!');
+                }
+            })
+        })
+
+        function buscarProdutos() {
 
             fetch('http://[::1]:3000/produtos', {
                 method: 'GET',
@@ -44,7 +83,7 @@
                     document.querySelector('#produtos').innerHTML += `<ul><li>ID: ${produto.id}</li><li>Nome: ${produto.nome}</li></ul>`;
                 });
             })
-        })
+        }
     </script>
 </body>
 </html>

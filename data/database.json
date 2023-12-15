@@ -12,6 +12,16 @@
       "id": 3,
       "nome": "Volante",
       "tipo": "Controle"
+    },
+    {
+      "id": 4,
+      "nome": "Roda",
+      "tipo": "Controle"
+    },
+    {
+      "id": 5,
+      "nome": "Roda",
+      "tipo": "Controle"
     }
   ],
   "cliente": [
