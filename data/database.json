@@ -2,11 +2,13 @@
   "produtos": [
     {
       "id": 1,
-      "nome": "Retrovisor"
+      "nome": "Retrovisor",
+      "tipo": "Segurança"
     },
     {
       "id": 2,
-      "nome": "Calota"
+      "nome": "Calota",
+      "tipo": "Controle"
     },
     {
       "id": 3,
@@ -15,11 +17,6 @@
     },
     {
       "id": 4,
-      "nome": "Roda",
-      "tipo": "Controle"
-    },
-    {
-      "id": 5,
       "nome": "Roda",
       "tipo": "Controle"
     }
